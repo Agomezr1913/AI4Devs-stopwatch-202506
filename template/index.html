@@ -1,13 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Timer and Countdown</title>
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cronómetro y Cuenta Atrás</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #f0f0f0;
+    }
+
+    .mode-selector {
+      display: flex;
+      justify-content: center;
+      margin: 20px;
+    }
+
+    .mode {
+      width: 150px;
+      padding: 20px;
+      margin: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .stopwatch {
+      background-color: #eaffea;
+    }
+
+    .countdown {
+      background-color: #ffeaea;
+    }
+
+    .active {
+      border: 3px solid #000;
+    }
+
+    .timer-display {
+      font-size: 80px;
+      background: #e0e6ff;
+      padding: 20px;
+      margin: 20px;
+      border-radius: 20px;
+      display: inline-block;
+      min-width: 420px;
+    }
+
+    button {
+      font-size: 24px;
+      padding: 20px 40px;
+      margin: 20px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+
+    .start-btn {
+      background-color: limegreen;
+      color: black;
+    }
+
+    .clear-btn {
+      background-color: red;
+      color: white;
+    }
+  </style>
 </head>
 <body>
-<h1>Timer and Countdown</h1>
-<script src="script.js"></script>
+
+  <div class="mode-selector">
+    <div id="stopwatchMode" class="mode stopwatch active">
+      <h3>Stopwatch</h3>
+      <div style="font-size: 50px;">⬆️</div>
+    </div>
+    <div id="countdownMode" class="mode countdown">
+      <h3>Countdown</h3>
+      <div style="font-size: 50px;">⬇️</div>
+    </div>
+  </div>
+
+  <div class="timer-display" id="timerDisplay">00:00:00</div>
+
+  <div>
+    <button class="start-btn" id="startBtn">Start</button>
+    <button class="clear-btn" id="clearBtn">Clear</button>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
